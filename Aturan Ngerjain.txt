@@ -1,0 +1,13 @@
+1. Dilarang melakukan plagiarisme. Segala tindakan plagiarisme akan ditindak dengan tegas.
+Jika menggunakan sumber lain sebagai acuan, jangan lupa tuliskan sumbernya.
+2. Format nama le: untuk soal ke-i, nama le-nya tugas i.ext
+Dengan ext merupakan extension dari le.
+Contoh: mengerjakan soal ketiga dengan bahasa Java, maka nama le-nya tugas 3.java.
+3. Bahasa pemrograman yang boleh digunakan dalam mengerjakan setiap soal bebas (tetapi
+diharapkan merupakan bahasa yang umum digunakan, seperti C, C++, Java, dan Python).
+4. Ada baiknya menuliskan bahasa beserta versinya pada dokumentasi. Sebagai contoh jika
+menggunakan Python, terdapat perbedaan yang cukup signikan pada versi 2 dan 3.
+5. Usahakan untuk mengimplementasi sendiri semua fungsi untuk komputasi (independent ter-
+hadap bahasa pemrograman yang dipakai).
+6. Tuliskan penjelasan pada dokumentasi dengan jelas. Dianjurkan mencantumkan nama indi-
+vidu yang mengerjakan masing-masing soal.
