@@ -1,3 +1,4 @@
+
 public class Relation {
 	private boolean[][] primary;
 	private boolean[][] closer_reflection;
@@ -265,6 +266,40 @@ public class Relation {
 		}else{
 			System.out.println("tidak ada");
 		}
+	}
+	
+	/**
+	 * Mahdiazhari modifications
+	 * Check if relation is ordered/equivalent
+	 * 
+	 */
+	
+	public void getEquivalentOrdered() {
+		if (isEquivalent() && isOrdered()) {
+			System.out.println("setara dan terurut");
+		} else if (isEquivalent() && !isOrdered()) {
+			System.out.println("setara");
+		} else if (!isEquivalent() && isOrdered()) {
+			System.out.println("terurut");
+		} else {
+			System.out.println("tidak setara dan tidak terurut");
+		}
+	}
+	
+	public boolean isEquivalent() {
+		checkAll();
+		if (isRefelction && isSimmetry && isTransitive) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean isOrdered() {
+		checkAll();
+		if (isRefelction && isAntisimmetry && isTransitive) {
+			return true;
+		}
+		return false;
 	}
 	
 }
