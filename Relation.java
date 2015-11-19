@@ -164,13 +164,13 @@ public class Relation {
 	}
 	
 	public void generateRelation(boolean refflection, boolean irreflection, boolean simmetry, boolean antisimmetry, boolean asimmetry, boolean transitive){
-		if(refflection && irreflection){
+		if((refflection && irreflection)||(refflection && asimmetry)){
 			System.out.println("tidak ada");
 			return;
 		}
 		
 		Relation tempRelation = getCloser(refflection, simmetry, transitive);
-		if(((irreflection != tempRelation.isIrreflection()) && irreflection)||((antisimmetry != tempRelation.isAntisimmetry()) && antisimmetry)){
+		if((tempRelation.isIrreflection() && irreflection)||(tempRelation.isAntisimmetry() && antisimmetry)||(tempRelation.isAsimmetry() && asimmetry)){
 			System.out.println("tidak ada");
 			return;
 		}
