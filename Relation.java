@@ -204,7 +204,7 @@ public class Relation {
 		return isAntisimmetry;
 	}
 
-	public boolean isAsimetry() {
+	public boolean isAsimmetry() {
 		return this.isAntisimmetry && this.isIrreflection;
 	}
 
