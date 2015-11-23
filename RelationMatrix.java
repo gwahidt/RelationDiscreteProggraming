@@ -18,7 +18,7 @@ public class RelationMatrix {
 	private char isTransitive;
 	
 	//char to indicate, 3 conditions
-	private static final char U = 'U'; //undefined
+	private static final char U = 'U'; //unknown
 	private static final char T = 'T'; //true
 	private static final char F = 'F'; //false
 
@@ -121,11 +121,9 @@ public class RelationMatrix {
 	 * @return boolean that specifies wheter the relation is reflective or not
 	 */
 	public boolean isReflective() {
-		if(isReflective != U) return isReflective == T ? true : false;
-		else {
-			setReflectivity();
-			return isReflective == T ? true : false;
-		}
+		if(isReflective == U) setReflectivity();
+		
+		return isReflective == T ? true : false;	
 	}
 	
 
@@ -134,11 +132,9 @@ public class RelationMatrix {
 	 * @return boolean that specifies wheter the relation is irreflective or not
 	 */
 	public boolean isIrreflective() {
-		if(isIrreflective != U) return isIrreflective == T ? true : false;
-		else {
-			setReflectivity();
-			return isIrreflective == T ? true : false;
-		}
+		if(isIrreflective == U) setReflectivity();
+		
+		return isIrreflective == T ? true : false;
 	}
 	
 	/**
@@ -146,11 +142,9 @@ public class RelationMatrix {
 	 * @return boolean that specifies wether given matrix is symmetrical or not
 	 */
 	public boolean isSymmetrical() {
-		if(isSymmetrical != U) return isSymmetrical == T ? true : false;
-		else {
-			setSymmetry();
-			return isSymmetrical == T ? true : false;
-		}
+		if(isSymmetrical == U) setSymmetry();
+		
+		return isSymmetrical == T ? true : false;
 	}
 	
 	/**
@@ -158,11 +152,9 @@ public class RelationMatrix {
 	 * @return boolean that specifies wether given matrix is antisymmetrical or not
 	 */
 	public boolean isAntisymmetrical() {
-		if(isAntisymmetrical != U) return isAntisymmetrical == T ? true : false;
-		else {
-			setSymmetry();
-			return isAntisymmetrical == T ? true : false;
-		}
+		if(isAntisymmetrical == U) setSymmetry();
+		
+		return isAntisymmetrical == T ? true : false;
 	}
 	
 	/**
