@@ -27,6 +27,7 @@ public class RelationMatrix {
 	 * @param size the size of the new matrix
 	 */
 	public RelationMatrix(int size){
+		this.size = size;
 		this.relationMatrix = new boolean[size][size];
 		this.isReflective = F;
 		this.isIrreflective = T;
