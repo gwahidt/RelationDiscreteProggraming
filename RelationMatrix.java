@@ -11,9 +11,9 @@ public class RelationMatrix {
 	private char isAntisymmetrical;
 	private char isTransitive;
 	
-	public static final char U = 'U';
-	public static final char T = 'T';
-	public static final char F = 'F';
+	private static final char U = 'U';
+	private static final char T = 'T';
+	private static final char F = 'F';
 
 	/**
 	 * Construct a new empty relation matrix with a specified size of unknown type.
@@ -41,7 +41,7 @@ public class RelationMatrix {
 	public void add(int i, int j){
 		relationMatrix[i][j] = true;
 		if(isReflective != T) isReflective = U;
-		this.isIrreflective = (i == j ? F : U);
+		this.isIrreflective = (i == j ? F : isIrreflective);
 		if((isSymmetrical == T) && (i != j)) {
 			isSymmetrical = (relationMatrix[j][i] ? T : F);
 		}
@@ -53,7 +53,7 @@ public class RelationMatrix {
 	
 	public void remove(int i, int j){
 		relationMatrix[i][j] = false;
-		this.isReflective = (i == j ? F : U);
+		this.isReflective = (i == j ? F : isReflective);
 		if(isIrreflective != T) isIrreflective = U;
 		if(isSymmetrical == T) {
 			isSymmetrical = (!relationMatrix[j][i] ? T : F);
@@ -180,5 +180,9 @@ public class RelationMatrix {
 	
 	public boolean[][] getRelationMatrix() {
 		return relationMatrix;
+	}
+	
+	public int size() {
+		return size;
 	}
 }
