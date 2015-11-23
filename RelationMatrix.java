@@ -82,7 +82,7 @@ public class RelationMatrix {
 		
 		for(int i = 0; i < size; i++) for(int j = i; j < size; j++) if(i != j) {
 			setSymmetrical &= !(relationMatrix[i][j] ^ relationMatrix[j][i]);
-			setAntisymmetrical &= !(relationMatrix[i][j] || relationMatrix[j][i]);
+			setAntisymmetrical &= !(relationMatrix[i][j] && relationMatrix[j][i]);
 		}
 		this.isSymmetrical = (setSymmetrical ? T : F);
 		this.isAntisymmetrical = (setAntisymmetrical ? T : F);
@@ -157,7 +157,7 @@ public class RelationMatrix {
 	 * Using Warshall's Algorithm
 	 * @return
 	 */
-	public RelationMatrix toTransitiveClosure() {
+	public RelationMatrix getTransitiveClosure() {
 		boolean[][] newMatrix = Arrays.copyOf(relationMatrix, size);
 		for(int i = 0; i < size; i++) {
 			ArrayList<Integer> horizontalMask = new ArrayList<Integer>();
