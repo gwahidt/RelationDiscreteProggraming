@@ -42,4 +42,19 @@ public class Relations
 		}
 		return new RelationMatrix(newMatrix);	
 	}
+	
+	public static RelationMatrix toSymmetricClosure(RelationMatrix matrix){
+		boolean[][] relationMatrix = matrix.getRelationMatrix();
+		int size = matrix.size();
+		boolean[][] newMatrix = Arrays.copyOf(relationMatrix, size);
+		for(int i = 0; i < size; i++){
+			for(int j = i + 1; j < size; j++){
+				if(newMatrix[i][j] || newMatrix[j][i]){
+					newMatrix[i][j] = true;
+					newMatrix[j][i] = true;
+				}
+			}
+		}
+		return new RelationMatrix(newMatrix);
+	}
 }
