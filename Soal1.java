@@ -32,30 +32,37 @@ public class Soal1{
 		
 		if(isReflective){
 			out.write("refleksif");
+			out.newLine();
 		}
 		
 		if(isIrreflecsive){
 			out.write("irrefleksif");
+			out.newLine();
 		}
 		
 		if(isSymmetrical){
 			out.write("simetris");
+			out.newLine();
 		}
 		
 		if(isAntisymmetrical){
 			out.write("antisimetri");
+			out.newLine();
 			
 			if(isIrreflecsive){
 				out.write("asimetri");
+				out.newLine();
 			}
 		}
 		
 		if(isTransitive){
 			out.write("transitif");
+			out.newLine();
 		}
 		
 		if(!isReflective && !isIrreflecsive && !isSymmetrical && !isAntisymmetrical && !isTransitive){
 			out.write("tidak ada");
+			out.newLine();
 		}
 		
 		in.close();
