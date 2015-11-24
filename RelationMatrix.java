@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+
 /**
  * Class representating a relation matrix
  * @author Arif Budiman
