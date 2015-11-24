@@ -3,7 +3,12 @@ import java.util.Arrays;
 
 
 public class Relations
-{
+{	
+	/**
+	 * Method to get transitive closure of the relation
+	 * Using Warshall's Algorithm
+	 * @return RelatonMatrix with the transitive property
+	 */
 	public static RelationMatrix toTransitiveClosure(RelationMatrix matrix) {
 		boolean[][] relationMatrix = matrix.getRelationMatrix();
 		int size = matrix.size();
@@ -25,5 +30,16 @@ public class Relations
 			}
 		}
 		return new RelationMatrix(newMatrix);
+	}
+	
+	public static RelationMatrix toReflectiveClosure(RelationMatrix matrix) {
+		boolean[][] relationMatrix = matrix.getRelationMatrix();
+		boolean[][] newMatrix = Arrays.copyOf(relationMatrix, matrix.size());
+		for (int i = 0; i < matrix.size(); i++) {
+			if (!relationMatrix[i][i]) {
+				newMatrix[i][i] = true;
+			}
+		}
+		return new RelationMatrix(newMatrix);	
 	}
 }
