@@ -196,6 +196,22 @@ public class RelationMatrix {
 		return true;
 	}
 	
+	/**
+	 * Method to get the equivalent property of the Relation
+	 * @return boolean of equivalence
+	 */
+	public boolean isEquivalent() {
+		return isReflective() && isSymmetrical() && isTransitive();
+	}
+	
+	/**
+	 * Method to get ordered property of the Relation
+	 * @return boolean of ordered property
+	 */
+	public boolean isOrdered() {
+		return isReflective() && isAntisymmetrical() && isTransitive();
+	}
+	
 	
 	/**
 	 * Method to get the 2d boolean array representation of the relation
