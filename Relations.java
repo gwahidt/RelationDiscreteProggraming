@@ -32,6 +32,11 @@ public class Relations
 		return new RelationMatrix(newMatrix);
 	}
 	
+	/**
+	 * Method to find the reflective closure of the relation matrix
+	 * @param matrix the matrix to find the closure
+	 * @return RelationMatrix with reflective property
+	 */
 	public static RelationMatrix toReflectiveClosure(RelationMatrix matrix) {
 		boolean[][] relationMatrix = matrix.getRelationMatrix();
 		boolean[][] newMatrix = Arrays.copyOf(relationMatrix, matrix.size());
@@ -43,6 +48,11 @@ public class Relations
 		return new RelationMatrix(newMatrix);	
 	}
 	
+	/**
+	 * Method to find the Symmetric closure of the relation matrix
+	 * @param matrix the matrix to find the closure
+	 * @return RelationMatrix with symmetric property
+	 */
 	public static RelationMatrix toSymmetricClosure(RelationMatrix matrix){
 		boolean[][] relationMatrix = matrix.getRelationMatrix();
 		int size = matrix.size();
