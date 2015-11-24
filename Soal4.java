@@ -92,6 +92,7 @@ public class Soal4 {
 			// check irreflesif dan antisimetri
 			boolean isIrreflecsive = false;
 			boolean isAntisymmetrical = false;
+			boolean isAsmmetrical = false;
 			
 			// check irrefleksif
 			if(properties[1]){
@@ -103,7 +104,12 @@ public class Soal4 {
 				isAntisymmetrical = relationMatrix.isAntisymmetrical();
 			}
 			
-			if((properties[1] ^ isIrreflecsive) ||(properties[3] ^ isAntisymmetrical) ){
+			// check asimetri
+			if(properties[4]){
+				isAsmmetrical = relationMatrix.isAsymmetrical();
+			}
+			
+			if((properties[1] ^ isIrreflecsive) ||(properties[3] ^ isAntisymmetrical) || (properties[4] ^ isAsmmetrical) ){
 				out.write("tidak ada");
 			}else{
 				boolean[][] matrix = relationMatrix.getRelationMatrix();
