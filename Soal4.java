@@ -60,11 +60,19 @@ public class Soal4 {
 		
 		for(int i = 0; i < numberOfTuples; i++){
 			String tuples = in.readLine();
+			/*
+			 * formToInt tuple
+			 * a = 0
+			 * b = 1
+			 * c = 2
+			 * d = 3
+			 * e = 4
+			 * f = 5
+			*/
+			int formToIntFirstTuple = tuples.charAt(0) - 'a';
+			int formToIntSecondTuple = tuples.charAt(2) - 'a';
 			
-			int formToIntFirstTupple = tuples.charAt(0) - 'a';
-			int formToIntSecondTupple = tuples.charAt(2) - 'a';
-			
-			relationMatrix.add(formToIntFirstTupple, formToIntSecondTupple);
+			relationMatrix.add(formToIntFirstTuple, formToIntSecondTuple);
 		}
 		
 		/*
@@ -114,9 +122,11 @@ public class Soal4 {
 			}else{
 				boolean[][] matrix = relationMatrix.getRelationMatrix();
 				
+				// print all tuples
 				for(int i = 0; i < elements.length; i++){
 					for(int j = 0; j < elements.length; j++){
 						if(matrix[i][j]){
+							// print "first tuple" "second tuple"
 							out.write(((char) (i + 'a')) + " " + ((char) (j + 'a')));
 							out.newLine();
 						}
