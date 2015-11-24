@@ -27,6 +27,7 @@ public class Soal4 {
 		int numberOfProperties = Integer.parseInt(firstLine[0]);
 		int numberOfTuples = Integer.parseInt(firstLine[1]);
 		
+		
 		String secondLine = in.readLine();
 		for(int i = 0; i < numberOfProperties; i++){
 			switch (secondLine.charAt(i * 2)) {
