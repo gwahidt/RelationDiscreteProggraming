@@ -14,8 +14,8 @@ public class Soal4 {
 		
 		
 		/**
-		 * index 0 = reflecsive
-		 * index 1 = irreflecsive
+		 * index 0 = reflective
+		 * index 1 = irreflective
 		 * index 2 = symmetrical
 		 * index 3 = antisimetrical
 		 * index 4 = asimetrical
@@ -31,27 +31,27 @@ public class Soal4 {
 		String secondLine = in.readLine();
 		for(int i = 0; i < numberOfProperties; i++){
 			switch (secondLine.charAt(i * 2)) {
-			case '1':
+			case '1':// case reflective properties
 					properties[0] = true;
 				break;
 			
-			case '2':
+			case '2':// case irreflective properties
 					properties[1] = true;
 				break;
 				
-			case '3':
+			case '3':// case symmertical properties
 					properties[2] = true;
 				break;
 				
-			case '4':
+			case '4':// case antisymmertical properties
 					properties[3] = true;
 				break;
 				
-			case '5':
+			case '5':// case asimmertycal properties
 					properties[4] = true;
 				break;
 				
-			case '6':
+			case '6':// case transitive properties
 					properties[5] = true;
 				break;
 				
@@ -71,7 +71,7 @@ public class Soal4 {
 		 * tidak akan ada relasi yang refkesif dan irrefleksif
 		 * dan tidak akan ada relasi yang refleksif dan asimetri
 		 */
-		if((properties[0] && properties[1]) || (properties[0] && properties[4])){
+		if(properties[0] && (properties[1] || properties[4])){
 			out.write("tidak ada");
 		}else{
 			// check refleksif
@@ -90,13 +90,13 @@ public class Soal4 {
 			}
 			
 			// check irreflesif dan antisimetri
-			boolean isIrreflecsive = false;
+			boolean isIrreflective = false;
 			boolean isAntisymmetrical = false;
 			boolean isAsmmetrical = false;
 			
 			// check irrefleksif
 			if(properties[1]){
-				isIrreflecsive =  relationMatrix.isIrreflective();
+				isIrreflective =  relationMatrix.isIrreflective();
 			}
 			
 			// check antisimerti
